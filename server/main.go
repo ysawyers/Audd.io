@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/qinains/fastergoding"
+	"github.com/ysawyers/Audd.io/tree/master/server/routes"
+)
 
 func main() {
-	fmt.Print("Hello World!")
+	fastergoding.Run()
+	app := fiber.New()
+
+	routes.PublicRoutes(app)
+
+	app.Listen(":5000")
 }
